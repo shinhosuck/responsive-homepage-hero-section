@@ -295,7 +295,7 @@ li {
     .link-has-three-elements {
         position: absolute;
         z-index: 10;
-        background: white;
+        background: hsl(0, 0%, 95%);
         top: 30px;
         width: 150px;
         border-radius: 10px;
