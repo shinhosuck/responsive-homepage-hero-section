@@ -79,4 +79,9 @@ window.addEventListener('resize', handleWindowEvent)
 if(windowInnerWidth > 900){
     handleWindowEvent()
 }
+
+window.addEventListener('click', (e)=> {
+  const path = e.composedPath()
+  path.some((element)=> console.log(element.classList))
+})
 // END OF NAVBAR
