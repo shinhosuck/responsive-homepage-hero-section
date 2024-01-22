@@ -1,0 +1,471 @@
+::before,
+::after,
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.background-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.600)
+}
+
+.hide-background-overlay {
+    display: none;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    overflow-x: hidden;
+    background: hsl(0, 0%, 90%);
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li {
+    list-style-type: none;
+}
+
+.navbar-container {
+    padding: 1.5rem 0;
+}
+
+.navbar {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navlinks {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: -120%;
+    width: 250px;
+    height: 100%;
+
+    display: grid;
+    align-content: start;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: hsl(0, 0%, 95%);
+    transition: right 250ms linear
+}
+
+.show-navlinks {
+    right: 0
+}
+
+.navlink {
+    display: grid;
+}
+
+.navlink > a {
+    color: hsl(0, 0%, 30%);
+}
+
+.li-close-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.li-close-btn > img {
+    width: 23px;
+}
+
+.link-has-four-elements > a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: hsl(0, 0%, 30%);
+    padding: 0.75rem 1rem
+}
+
+.link-has-three-elements > a {
+    color: hsl(0, 0%, 30%);
+    padding: 0.75rem 1rem
+}
+
+.link-has-four-elements > a > img {
+    width: 17px;
+}
+
+.link-has-four-elements > a:first-child,
+.link-has-three-elements > a:first-child {
+    padding-top: 2rem;
+}
+
+.link-has-four-elements > a:last-child,
+.link-has-three-elements > a:last-child {
+    padding-bottom: 0;
+}
+
+.multiple-navlinks {
+    display: grid;
+    max-height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-height 150ms linear;
+}
+
+.li-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.li-buttons-container > span {
+    color: hsl(0, 0%, 30%);
+}
+
+.li-buttons-container > div > img {
+    width: 13px;
+}
+
+.show-sub-navlinks {
+   max-height: 500px;
+}
+
+.hide-sub-navlinks-btn {
+    display: none;
+}
+
+.login,
+.register {
+    text-align: center;
+}
+
+.register {
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    outline: 2px solid hsl(0, 0%, 50%);
+}
+
+@media (hover) {
+
+    .register:hover {
+        color: white;
+        background: hsl(0, 0%, 20%);
+        outline: 2px solid hsl(0, 0%, 20%);
+    }
+
+    .register:hover > a {
+        color: white;
+    }
+
+}
+
+.hero-container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 2.5rem;
+    padding: 3rem 0;
+    padding-top: 1rem;
+    align-content: start;
+    text-align: center;
+}
+
+.lg-img {
+    display: none;
+}
+
+.mobile-img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.hero-content-container {
+    display: grid;
+    gap: 2.5rem;
+    align-content: start;
+    margin-top: 3rem;
+}
+
+.hero-text-container {
+    display: grid;
+    gap: 1rem;
+    
+}
+
+.hero-text-container > h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: hsl(0, 0%, 15%);
+    text-wrap: balance;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.hero-text-container > p {
+    letter-spacing: 0.07rem;
+    line-height: 1.6;
+    font-size: 1.07rem;
+    text-wrap: pretty;
+    color: hsl(0, 0%, 30%);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.learn-more {
+    padding: 1.1rem 2rem;
+    border-radius: 15px;
+    background: hsl(0, 0%, 20%);
+    color: white;
+    justify-self: center;
+}
+
+@media (hover) {
+    .learn-more:hover {
+       background: hsl(0, 0%, 85%);
+       color: hsl(0, 0%, 15%);
+       outline: 2px solid hsl(0, 0%, 50%)
+    }
+}
+
+.client-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    row-gap: 1rem;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    
+}
+
+.client-image-container > img {
+    width: 80px;
+    height: auto;
+    display: block;
+}
+
+.client-image-container > img:nth-child(2) {
+    width: 60px;
+}
+
+@media screen and (min-width:900px) {
+
+    .li-close-btn,
+    .toggle-navlinks-btn {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: start;
+        gap: 2rem
+    }
+
+    .navlinks {
+        flex: 1;
+        position: static;
+        z-index: initial;
+        top: initial;
+        right: initial;
+        width: initial;
+        height: initial;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 0;
+        background: transparent;
+        transition: none;
+    }
+
+    .link-features,
+    .link-company {
+        position: relative;
+    }
+
+    .link-has-four-elements,
+    .link-has-three-elements {
+        position: absolute;
+        z-index: 10;
+        background: white;
+        top: 30px;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    .link-has-four-elements {
+        left: -80px;
+        width: 180px;
+    }
+
+    .link-has-four-elements > a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: hsl(0, 0%, 30%);
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .link-has-three-elements > a {
+        color: hsl(0, 0%, 30%);
+        padding: 0.75rem 1.5rem
+    }
+
+    .link-has-four-elements > a:first-child,
+    .link-has-three-elements > a:first-child {
+        padding-top: 1.5rem;
+    }
+
+    .link-has-four-elements > a:last-child,
+    .link-has-three-elements > a:last-child {
+        padding-bottom: 1.5rem;
+    }
+
+    .login {
+        margin-left: auto;
+    }
+
+    .register {
+        padding: 0.6rem 1rem;
+
+    }
+
+    /* Hero Section */
+    .hero-container {
+        width: 90%;
+        max-width: 1150px;
+        margin: 0 auto;
+        display: flex;
+        align-items: end;
+        gap: 3.5rem;
+        padding: 2rem 0;
+        text-align: start;
+    }
+    .mobile-img {
+        display: none;
+    }
+
+    .hero-image-container {
+        order: 2;
+        flex: 1
+    }
+
+    .lg-img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .hero-content-container {
+        flex: 1;
+        display: grid;
+        gap: 3.5rem;
+        align-content: start;
+        margin-top: 0;
+    }
+
+    .hero-text-container {
+        gap: 2rem;
+        
+    }
+    
+    .hero-text-container > h1 {
+        font-size: 3.5rem;
+        line-height: 1;
+        color: hsl(0, 0%, 15%);
+        max-width: initial;
+        margin: 0;
+    }
+
+    .hero-text-container > p {
+        max-width: 500px;
+        margin: 0
+    }
+
+    .learn-more {
+        justify-self: start;
+    }
+    
+    .client-image-container {
+        margin: 0;
+        margin-top: 2rem;
+        justify-content: start;
+    }
+
+    .client-image-container > img {
+        width: 70px;
+        height: auto;
+        display: block;
+    }
+    
+    .client-image-container > img:nth-child(2) {
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .hero-container {
+        gap: 4rem;
+    }
+
+    .hero-text-container > h1 {
+        font-size: 3.7rem;
+    }
+
+    .client-image-container {
+        margin: 0;
+        margin-top: 3rem;
+        justify-content: start;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .hero-text-container > h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .hero-container {
+        gap: 6rem;
+    }
+
+    .hero-text-container > h1 {
+        font-size: 4.2rem;
+    }
+
+    .hero-text-container > p {
+        max-width: 700px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .hero-container {
+        gap: 7rem;
+    }
+
+    .hero-text-container > h1 {
+        font-size: 4.6rem;
+        text-wrap: balance;
+    }
+
+
+    .client-image-container > img {
+        width: 80px;
+    }
+    
+    .client-image-container > img:nth-child(2) {
+        width: 60px;
+    }
+}
